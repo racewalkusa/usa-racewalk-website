@@ -175,77 +175,144 @@
 
   <!-- ATHLETES SECTION -->
   <section id="athletes" class="tab-content">
-    <h2>Athletes</h2>
+  <h2>Athletes</h2>
 
-    <div class="athlete">
-      <img src="images/nick.jpeg" alt="Nick Christie">
-      <div>
-        <strong>Nick Christie</strong><br>Elite racewalker and national competitor.
-      </div>
+  <div class="athlete-card" onclick="toggleBio(this)">
+    <img src="images/nick.jpeg" alt="Nick Christie">
+    <div class="athlete-info">
+      <strong>Nick Christie, OLY</strong>
+      <p class="athlete-bio">Elite racewalker and national competitor. Add full bio here.</p>
     </div>
+  </div>
 
-    <div class="athlete">
-      <img src="images/jordan.jpeg" alt="Jordan Crawford">
-      <div>
-        <strong>Jordan Crawford</strong><br>Strong performer in 20km and 50km events.
-      </div>
+  <div class="athlete-card" onclick="toggleBio(this)">
+    <img src="images/jordan.jpeg" alt="Jordan Crawford">
+    <div class="athlete-info">
+      <strong>Jordan Crawford</strong>
+      <p class="athlete-bio">Strong performer in 20km and 50km events. Add full bio here.</p>
     </div>
+  </div>
 
-    <div class="athlete">
-      <img src="images/emmanuel.jpg" alt="Emmanuel Corvera">
-      <div>
-        <strong>Emmanuel Corvera</strong><br>Rising talent in US racewalking.
-      </div>
+  <div class="athlete-card" onclick="toggleBio(this)">
+    <img src="images/emmanuel.jpg" alt="Emmanuel Corvera">
+    <div class="athlete-info">
+      <strong>Emmanuel Corvera</strong>
+      <p class="athlete-bio">Rising talent in US racewalking. Add full bio here.</p>
     </div>
+  </div>
 
-    <div class="athlete">
-      <img src="images/jason.jpg" alt="Jason Cherng">
-      <div>
-        <strong>Jason Cherng</strong><br>Consistent national level competitor.
-      </div>
+  <div class="athlete-card" onclick="toggleBio(this)">
+    <img src="images/jason.jpg" alt="Jason Cherng">
+    <div class="athlete-info">
+      <strong>Jason Cherng</strong>
+      <p class="athlete-bio">Consistent national level competitor. Add full bio here.</p>
     </div>
+  </div>
 
-    <div class="athlete">
-      <img src="images/lauren.jpg" alt="Lauren Harris">
-      <div>
-        <strong>Lauren Harris</strong><br>Focused on 20km events with strong finishes.
-      </div>
+  <div class="athlete-card" onclick="toggleBio(this)">
+    <img src="images/lauren.jpg" alt="Lauren Harris">
+    <div class="athlete-info">
+      <strong>Lauren Harris</strong>
+      <p class="athlete-bio">Focused on 20km events with strong finishes. Add full bio here.</p>
     </div>
+  </div>
 
-    <div class="athlete">
-      <img src="images/maria.jpg" alt="Maria Michta-Coffey">
-      <div>
-        <strong>Maria Michta-Coffey</strong><br>Olympian and multiple national champion.
-      </div>
+  <div class="athlete-card" onclick="toggleBio(this)">
+    <img src="images/maria.jpg" alt="Maria Michta-Coffey">
+    <div class="athlete-info">
+      <strong>Maria Michta-Coffey, OLY</strong>
+      <p class="athlete-bio">Olympian and multiple national champion. Add full bio here.</p>
     </div>
+  </div>
 
-    <div class="athlete">
-      <img src="images/miranda.jpg" alt="Miranda Melville">
-      <div>
-        <strong>Miranda Melville</strong><br>Experienced elite US racewalker.
-      </div>
+  <div class="athlete-card" onclick="toggleBio(this)">
+    <img src="images/miranda.jpg" alt="Miranda Melville">
+    <div class="athlete-info">
+      <strong>Miranda Melville, OLY</strong>
+      <p class="athlete-bio">Experienced elite US racewalker. Add full bio here.</p>
     </div>
+  </div>
 
-    <div class="athlete">
-      <img src="images/katieb.jpg" alt="Katie Burnett">
-      <div>
-        <strong>Katie Burnett</strong><br>Strong competitor in distance racewalking events.
-      </div>
+  <div class="athlete-card" onclick="toggleBio(this)">
+    <img src="images/katieb.jpg" alt="Katie Burnett">
+    <div class="athlete-info">
+      <strong>Katie Burnett</strong>
+      <p class="athlete-bio">Strong competitor in distance racewalking events. Add full bio here.</p>
     </div>
+  </div>
 
-    <div class="athlete">
-      <img src="images/angelica.jpg" alt="Angelica Harris">
-      <div>
-        <strong>Angelica Harris</strong><br>Team USA racewalker and multiple-time national champion.
-      </div>
+  <div class="athlete-card" onclick="toggleBio(this)">
+    <img src="images/angelica.jpg" alt="Angelica Harris">
+    <div class="athlete-info">
+      <strong>Angelica Harris</strong>
+      <p class="athlete-bio">Team USA racewalker and multiple-time national champion. Add full bio here.</p>
     </div>
+  </div>
 
-    <div class="athlete">
-      <img src="images/katiem.jpg" alt="Katie Miale">
-      <div>
-        <strong>Katie Miale</strong><br>Prominent US racewalker in national events.
-      </div>
+  <div class="athlete-card" onclick="toggleBio(this)">
+    <img src="images/katiem.jpg" alt="Katie Miale">
+    <div class="athlete-info">
+      <strong>Katie Miale</strong>
+      <p class="athlete-bio">Prominent US racewalker in national events. Add full bio here.</p>
     </div>
+  </div>
+
+</section>
+
+<!-- Add this CSS to your <style> -->
+<style>
+  .athlete-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin-bottom: 24px;
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .athlete-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  }
+
+  .athlete-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+    object-fit: cover;
+  }
+
+  .athlete-info strong {
+    font-size: 1.6rem;
+    color: #003366;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .athlete-bio {
+    display: none;
+    font-size: 1rem;
+    font-weight: 200;
+    color: #000;
+  }
+</style>
+
+<!-- Add this JS before </body> -->
+<script>
+  function toggleBio(card) {
+    const bio = card.querySelector('.athlete-bio');
+    if (bio.style.display === 'block') {
+      bio.style.display = 'none';
+    } else {
+      bio.style.display = 'block';
+      card.scrollIntoView({behavior: "smooth", block: "start"});
+    }
+  }
+</script>
 
   </section>
 
