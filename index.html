@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>USA RACEWALK</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Roboto+Condensed:wght@200;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* GENERAL STYLES */
+    body {
+      margin: 0;
+      font-family: 'Roboto Condensed', sans-serif;
+      font-weight: 200;
+      background: #e6f0ff;
+      color: #000;
+      line-height: 1.7;
+    }
+
+    /* NAVIGATION BAR */
+    nav {
+      position: sticky;
+      top: 0;
+      background: #003366;
+      padding: 16px;
+      text-align: center;
+      z-index: 100;
+    }
+
+    nav a {
+      margin: 0 20px;
+      color: #ffffff;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ff0000; /* red hover accent */
+    }
+
+    /* HEADER */
+    header {
+      padding: 100px 24px 60px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-family: 'Fjalla One', sans-serif;
+      font-weight: 400;
+      font-size: 4rem;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+      color: #003366;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto;
+      color: #000000;
+    }
+
+    /* SECTIONS */
+    .tab-content {
+      display: none; /* hide all sections by default */
+    }
+
+    #news {
+      display: block; /* show news by default */
+    }
+
+    section {
+      max-width: 700px;
+      margin: 0 auto 40px auto;
+      padding: 40px 24px;
+      background: #ffffff;
+      border-radius: 8px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    h2 {
+      font-family: 'Roboto Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1.6rem;
+      margin-bottom: 16px;
+      color: #003366;
+    }
+
+    p {
+      font-family: 'Roboto Condensed', sans-serif;
+      font-weight: 200;
+      font-size: 1.05rem;
+      color: #000000;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 40px 24px;
+      font-size: 0.9rem;
+      color: #444;
+    }
+
+    /* IMAGE STYLES */
+    .athlete {
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .athlete img {
+      width: 80px;
+      border-radius: 50%;
+      margin-right: 12px;
+      object-fit: cover;
+    }
+
+    .news-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .news-item img {
+      width: 100px;
+      height: 60px;
+      object-fit: cover;
+      margin-right: 12px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="#" onclick="showSection('news')">News</a>
+    <a href="#" onclick="showSection('athletes')">Athletes</a>
+    <a href="#" onclick="showSection('results')">Results</a>
+    <a href="#" onclick="showSection('about')">About</a>
+  </nav>
+
+  <!-- HEADER -->
+  <header>
+    <h1>USA RACEWALK</h1>
+    <p>Your go-to spot for United States racewalking information.</p>
+  </header>
+
+  <!-- NEWS SECTION -->
+  <section id="news" class="tab-content">
+    <h2>Latest</h2>
+    <div class="news-item">
+      <img src="images/story1.jpg" alt="Story 1">
+      <div>
+        <strong>Story Title</strong><br>Short description goes here.
+      </div>
+    </div>
+    <div class="news-item">
+      <img src="images/story2.jpg" alt="Story 2">
+      <div>
+        <strong>Another Story Title</strong><br>Brief description of the piece.
+      </div>
+    </div>
+  </section>
+
+  <!-- ATHLETES SECTION -->
+  <section id="athletes" class="tab-content">
+    <h2>Athletes</h2>
+
+    <div class="athlete">
+      <img src="images/nick.jpeg" alt="Nick Christie">
+      <div>
+        <strong>Nick Christie</strong><br>Elite racewalker and national competitor.
+      </div>
+    </div>
+
+    <div class="athlete">
+      <img src="images/jordan.jpeg" alt="Jordan Crawford">
+      <div>
+        <strong>Jordan Crawford</strong><br>Strong performer in 20km and 50km events.
+      </div>
+    </div>
+
+    <div class="athlete">
+      <img src="images/emmanuel.jpg" alt="Emmanuel Corvera">
+      <div>
+        <strong>Emmanuel Corvera</strong><br>Rising talent in US racewalking.
+      </div>
+    </div>
+
+    <div class="athlete">
+      <img src="images/jason.jpg" alt="Jason Cherng">
+      <div>
+        <strong>Jason Cherng</strong><br>Consistent national level competitor.
+      </div>
+    </div>
+
+    <div class="athlete">
+      <img src="images/lauren.jpg" alt="Lauren Harris">
+      <div>
+        <strong>Lauren Harris</strong><br>Focused on 20km events with strong finishes.
+      </div>
+    </div>
+
+    <div class="athlete">
+      <img src="images/maria.jpg" alt="Maria Michta-Coffey">
+      <div>
+        <strong>Maria Michta-Coffey</strong><br>Olympian and multiple national champion.
+      </div>
+    </div>
+
+    <div class="athlete">
+      <img src="images/miranda.jpg" alt="Miranda Melville">
+      <div>
+        <strong>Miranda Melville</strong><br>Experienced elite US racewalker.
+      </div>
+    </div>
+
+    <div class="athlete">
+      <img src="images/katieb.jpg" alt="Katie Burnett">
+      <div>
+        <strong>Katie Burnett</strong><br>Strong competitor in distance racewalking events.
+      </div>
+    </div>
+
+    <div class="athlete">
+      <img src="images/angelica.jpg" alt="Angelica Harris">
+      <div>
+        <strong>Angelica Harris</strong><br>Team USA racewalker and multiple-time national champion.
+      </div>
+    </div>
+
+    <div class="athlete">
+      <img src="images/katiem.jpg" alt="Katie Miale">
+      <div>
+        <strong>Katie Miale</strong><br>Prominent US racewalker in national events.
+      </div>
+    </div>
+
+  </section>
+
+  <!-- RESULTS SECTION -->
+  <section id="results" class="tab-content">
+    <h2>Results</h2>
+    <p><strong>USA 20km Championships</strong><br>Top results from the latest race.</p>
+    <p><strong>Another Event</strong><br>Summary of placements and times.</p>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="tab-content">
+    <h2>About</h2>
+    <p>USA RACEWALK is your go-to source for news, athletes, and results in United States racewalking.</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 USA RACEWALK
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll('.tab-content');
+      sections.forEach(sec => sec.style.display = 'none');
+      document.getElementById(sectionId).style.display = 'block';
+      window.scrollTo(0,0);
+    }
+  </script>
+
+</body>
+</html>
