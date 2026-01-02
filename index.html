@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>USA RACEWALK</title>
 
   <!-- Google Fonts -->
@@ -36,15 +36,14 @@
       text-decoration: none;
       font-size: 1rem;
       transition: color 0.3s ease;
+      cursor: pointer;
     }
 
-    nav a:hover {
-      color: #ff0000; /* red hover accent */
-    }
+    nav a:hover { color: #ff0000; }
 
     /* HEADER */
     header {
-      padding: 100px 24px 60px;
+      padding: 60px 24px 40px;
       text-align: center;
     }
 
@@ -65,17 +64,12 @@
     }
 
     /* SECTIONS */
-    .tab-content {
-      display: none; /* hide all sections by default */
-    }
-
-    #news {
-      display: block; /* show news by default */
-    }
+    .tab-content { display: none; }
+    #news { display: block; }
 
     section {
-      max-width: 700px;
-      margin: 0 auto 40px auto;
+      max-width: 800px;
+      margin: 0 auto 40px;
       padding: 40px 24px;
       background: #ffffff;
       border-radius: 8px;
@@ -88,19 +82,23 @@
     }
 
     h2 {
-      font-family: 'Roboto Condensed', sans-serif;
       font-weight: 700;
-      font-size: 1.6rem;
+      font-size: 1.8rem;
       margin-bottom: 16px;
       color: #003366;
     }
 
-    p {
-      font-family: 'Roboto Condensed', sans-serif;
-      font-weight: 200;
-      font-size: 1.05rem;
-      color: #000000;
+    h3 {
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: #003366;
+      margin-top: 32px;
+      margin-bottom: 16px;
+      border-bottom: 2px solid #003366;
+      padding-bottom: 4px;
     }
+
+    p { font-size: 1.05rem; color: #000000; }
 
     /* FOOTER */
     footer {
@@ -110,20 +108,7 @@
       color: #444;
     }
 
-    /* IMAGE STYLES */
-    .athlete {
-      display: flex;
-      align-items: center;
-      margin-bottom: 16px;
-    }
-
-    .athlete img {
-      width: 80px;
-      border-radius: 50%;
-      margin-right: 12px;
-      object-fit: cover;
-    }
-
+    /* NEWS */
     .news-item {
       display: flex;
       align-items: center;
@@ -137,212 +122,381 @@
       margin-right: 12px;
       border-radius: 4px;
     }
+
+    /* ATHLETE CARDS */
+    .athlete-card {
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin-bottom: 24px;
+      padding: 20px;
+      display: flex;
+      align-items: flex-start;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .athlete-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .athlete-card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-right: 20px;
+      object-fit: cover;
+    }
+
+    .athlete-info strong {
+      font-size: 1.6rem;
+      color: #003366;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .athlete-bio {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: all 0.4s ease;
+    }
+
+    .athlete-card:hover .athlete-bio {
+      max-height: 500px;
+      opacity: 1;
+      margin-top: 8px;
+    }
+
+    /* RESULTS */
+    .results-tabs { margin-bottom: 20px; }
+
+    .results-tab-btn {
+      background: #003366;
+      color: #fff;
+      border: none;
+      padding: 10px 18px;
+      margin-right: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      border-radius: 6px;
+    }
+
+    .results-tab-btn.active { background: #ff0000; }
+
+    /* RESULTS DROPDOWNS */
+    .results-event {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      margin-bottom: 16px;
+      overflow: hidden;
+    }
+
+    .results-header {
+      background: #003366;
+      color: white;
+      padding: 14px 18px;
+      cursor: pointer;
+      font-weight: 700;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .results-header:hover { background: #0055aa; }
+
+    .results-content {
+      max-height: 0;
+      overflow: hidden;
+      background: #ffffff;
+      padding: 0 18px;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+    }
+
+    .results-event.open .results-content {
+      max-height: 2000px;
+      padding: 16px 18px 20px;
+    }
+
+    .results-arrow {
+      font-size: 1.2rem;
+      transition: transform 0.3s ease;
+    }
+
+    .results-event.open .results-arrow { transform: rotate(180deg); }
+
+    /* RESULTS TABLES */
+    .results-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 32px;
+      font-size: 0.95rem;
+    }
+
+    .results-table th {
+      background: #003366;
+      color: #fff;
+      padding: 10px;
+      text-align: left;
+    }
+
+    .results-table td {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .results-table tr:hover { background: #f2f6ff; }
+
+    .results-table tr.usa {
+      background: #eaf1ff;
+      font-weight: 700;
+    }
+
+    .results-table tr.usa td:last-child::after { content: " 🇺🇸"; }
   </style>
 </head>
 
 <body>
 
-  <!-- NAVIGATION -->
-  <nav>
-    <a href="#" onclick="showSection('news')">News</a>
-    <a href="#" onclick="showSection('athletes')">Athletes</a>
-    <a href="#" onclick="showSection('results')">Results</a>
-    <a href="#" onclick="showSection('about')">About</a>
-  </nav>
+<nav>
+  <a onclick="showSection('news')">News</a>
+  <a onclick="showSection('athletes')">Athletes</a>
+  <a onclick="showSection('results')">Results</a>
+  <a onclick="showSection('about')">About</a>
+</nav>
 
-  <!-- HEADER -->
-  <header>
-    <h1>USA RACEWALK</h1>
-    <p>Your go-to spot for United States racewalking information.</p>
-  </header>
+<header>
+  <h1>USA RACEWALK</h1>
+  <p>Your go-to spot for United States racewalking information.</p>
+</header>
 
-  <!-- NEWS SECTION -->
-  <section id="news" class="tab-content">
-    <h2>Latest</h2>
-    <div class="news-item">
-      <img src="images/story1.jpg" alt="Story 1">
-      <div>
-        <strong>Story Title</strong><br>Short description goes here.
-      </div>
-    </div>
-    <div class="news-item">
-      <img src="images/story2.jpg" alt="Story 2">
-      <div>
-        <strong>Another Story Title</strong><br>Brief description of the piece.
-      </div>
-    </div>
-  </section>
+<!-- NEWS -->
+<section id="news" class="tab-content">
+  <h2>Latest</h2>
+  <div class="news-item">
+    <img src="images/story1.jpg" alt="Story 1">
+    <div><strong>Story Title</strong><br>Short description goes here.</div>
+  </div>
+  <div class="news-item">
+    <img src="images/story2.jpg" alt="Story 2">
+    <div><strong>Another Story Title</strong><br>Brief description goes here.</div>
+  </div>
+</section>
 
-  <!-- ATHLETES SECTION -->
-  <section id="athletes" class="tab-content">
+<!-- ATHLETES -->
+<section id="athletes" class="tab-content">
   <h2>Athletes</h2>
 
-  <div class="athlete-card" onclick="toggleBio(this)">
+  <!-- US OLYMPIANS -->
+  <h3>US Olympians</h3>
+  <a href="maria.html" class="athlete-card">
+    <img src="images/maria.jpeg" alt="Maria Michta-Coffey">
+    <div class="athlete-info"><strong>Maria Michta-Coffey</strong>
+      <p class="athlete-bio">2012 & 2016 Olympian</p>
+    </div>
+  </a>
+  <a href="miranda.html" class="athlete-card">
+    <img src="images/miranda.jpeg" alt="Miranda Melville">
+    <div class="athlete-info"><strong>Miranda Melville</strong>
+      <p class="athlete-bio">2016 Olympian</p>
+    </div>
+  </a>
+  <a href="nick.html" class="athlete-card">
     <img src="images/nick.jpeg" alt="Nick Christie">
-    <div class="athlete-info">
-      <strong>Nick Christie, OLY</strong>
-      <p class="athlete-bio">Elite racewalker and national competitor. Add full bio here.</p>
+    <div class="athlete-info"><strong>Nick Christie</strong>
+      <p class="athlete-bio">2020 Olympian</p>
     </div>
-  </div>
+  </a>
 
-  <div class="athlete-card" onclick="toggleBio(this)">
-    <img src="images/jordan.jpeg" alt="Jordan Crawford">
-    <div class="athlete-info">
-      <strong>Jordan Crawford</strong>
-      <p class="athlete-bio">Strong performer in 20km and 50km events. Add full bio here.</p>
-    </div>
-  </div>
-
-  <div class="athlete-card" onclick="toggleBio(this)">
+  <!-- ELITE ATHLETES -->
+  <h3>Elite Athletes</h3>
+  <a href="emmanuel.html" class="athlete-card">
     <img src="images/emmanuel.jpg" alt="Emmanuel Corvera">
-    <div class="athlete-info">
-      <strong>Emmanuel Corvera</strong>
-      <p class="athlete-bio">Rising talent in US racewalking. Add full bio here.</p>
+    <div class="athlete-info"><strong>Emmanuel Corvera</strong>
+      <p class="athlete-bio">US National Team Member</p>
     </div>
-  </div>
+  </a>
+  <a href="jordan.html" class="athlete-card">
+    <img src="images/jordan.jpeg" alt="Jordan Crawford">
+    <div class="athlete-info"><strong>Jordan Crawford</strong>
+      <p class="athlete-bio">US National Team Member</p>
+    </div>
+  </a>
+  <a href="jason.html" class="athlete-card">
+    <img src="images/jason.jpeg" alt="Jason Cherng">
+    <div class="athlete-info"><strong>Jason Cherng</strong>
+      <p class="athlete-bio">US National Team Member</p>
+    </div>
+  </a>
+  <a href="lauren.html" class="athlete-card">
+    <img src="images/lauren.jpeg" alt="Lauren Harris">
+    <div class="athlete-info"><strong>Lauren Harris</strong>
+      <p class="athlete-bio">US National Team Member</p>
+    </div>
+  </a>
+  <a href="katieb.html" class="athlete-card">
+    <img src="images/katieb.jpeg" alt="Katie Burnett">
+    <div class="athlete-info"><strong>Katie Burnett</strong>
+      <p class="athlete-bio">US National Team Member</p>
+    </div>
+  </a>
+  <a href="angelica.html" class="athlete-card">
+    <img src="images/angelica.jpeg" alt="Angelica Harris">
+    <div class="athlete-info"><strong>Angelica Harris</strong>
+      <p class="athlete-bio">Elite Athlete</p>
+    </div>
+  </a>
+  <a href="stephanie.html" class="athlete-card">
+    <img src="images/stephanie.jpeg" alt="Stephanie Casey">
+    <div class="athlete-info"><strong>Stephanie Casey</strong>
+      <p class="athlete-bio">US National Team Member</p>
+    </div>
+  </a>
+  <a href="katiem.html" class="athlete-card">
+    <img src="images/katiem.jpeg" alt="Katie Miale">
+    <div class="athlete-info"><strong>Katie Miale</strong>
+      <p class="athlete-bio">Elite Athlete</p>
+    </div>
+  </a>
 
-  <div class="athlete-card" onclick="toggleBio(this)">
-    <img src="images/jason.jpg" alt="Jason Cherng">
-    <div class="athlete-info">
-      <strong>Jason Cherng</strong>
-      <p class="athlete-bio">Consistent national level competitor. Add full bio here.</p>
+  <!-- U20 ATHLETES -->
+  <h3>U20 Athletes</h3>
+  <a href="gael.html" class="athlete-card">
+    <img src="images/gael.jpeg" alt="Gael Plascenia">
+    <div class="athlete-info"><strong>Gael Plascenia</strong>
+      <p class="athlete-bio">Top U20 Racewalker</p>
     </div>
-  </div>
+  </a>
 
-  <div class="athlete-card" onclick="toggleBio(this)">
-    <img src="images/lauren.jpg" alt="Lauren Harris">
-    <div class="athlete-info">
-      <strong>Lauren Harris</strong>
-      <p class="athlete-bio">Focused on 20km events with strong finishes. Add full bio here.</p>
-    </div>
-  </div>
-
-  <div class="athlete-card" onclick="toggleBio(this)">
-    <img src="images/maria.jpg" alt="Maria Michta-Coffey">
-    <div class="athlete-info">
-      <strong>Maria Michta-Coffey, OLY</strong>
-      <p class="athlete-bio">Olympian and multiple national champion. Add full bio here.</p>
-    </div>
-  </div>
-
-  <div class="athlete-card" onclick="toggleBio(this)">
-    <img src="images/miranda.jpg" alt="Miranda Melville">
-    <div class="athlete-info">
-      <strong>Miranda Melville, OLY</strong>
-      <p class="athlete-bio">Experienced elite US racewalker. Add full bio here.</p>
-    </div>
-  </div>
-
-  <div class="athlete-card" onclick="toggleBio(this)">
-    <img src="images/katieb.jpg" alt="Katie Burnett">
-    <div class="athlete-info">
-      <strong>Katie Burnett</strong>
-      <p class="athlete-bio">Strong competitor in distance racewalking events. Add full bio here.</p>
-    </div>
-  </div>
-
-  <div class="athlete-card" onclick="toggleBio(this)">
-    <img src="images/angelica.jpg" alt="Angelica Harris">
-    <div class="athlete-info">
-      <strong>Angelica Harris</strong>
-      <p class="athlete-bio">Team USA racewalker and multiple-time national champion. Add full bio here.</p>
-    </div>
-  </div>
-
-  <div class="athlete-card" onclick="toggleBio(this)">
-    <img src="images/katiem.jpg" alt="Katie Miale">
-    <div class="athlete-info">
-      <strong>Katie Miale</strong>
-      <p class="athlete-bio">Prominent US racewalker in national events. Add full bio here.</p>
-    </div>
-  </div>
+  <!-- HIGH SCHOOL ATHLETES -->
+  <h3>High School Athletes</h3>
+  <!-- Future athletes go here -->
 
 </section>
 
-<!-- Add this CSS to your <style> -->
-<style>
-  .athlete-card {
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    margin-bottom: 24px;
-    padding: 20px;
-    display: flex;
-    align-items: flex-start;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
+<!-- RESULTS -->
+<section id="results" class="tab-content">
+  <h2>Results</h2>
+  <div class="results-tabs">
+    <button class="results-tab-btn active" onclick="showResults('year2026', this)">2026</button>
+    <button class="results-tab-btn" onclick="showResults('year2025', this)">2025</button>
+  </div>
 
-  .athlete-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  }
+  <!-- 2026 -->
+  <div id="year2026">
+    <div class="results-event">
+      <div class="results-header" onclick="toggleResults(this)">
+        USATF Marathon Racewalk Championships 2026
+        <span class="results-arrow">▼</span>
+      </div>
+      <div class="results-content">
+        <p>Coming soon! Who will be our RW Marathon winners?</p>
+      </div>
+    </div>
+  </div>
 
-  .athlete-card img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-right: 20px;
-    object-fit: cover;
-  }
+  <!-- 2025 -->
+  <div id="year2025" style="display:none;">
+    <!-- MILLROSE GAMES WOMEN -->
+    <div class="results-event">
+      <div class="results-header" onclick="toggleResults(this)">
+        Millrose Games – Women’s Mile Race Walk
+        <span class="results-arrow">▼</span>
+      </div>
+      <div class="results-content">
+        <p><strong>1.</strong> Lauren Harris – 6:46.37</p>
+        <p><strong>2.</strong> Angelina Colon – 7:10.86</p>
+        <p><strong>3.</strong> Alexa Governor – 7:15.06</p>
+        <p><strong>4.</strong> Ruby Ray – 7:28.02</p>
+        <p><strong>5.</strong> Katie Miale – 7:30.65</p>
+      </div>
+    </div>
 
-  .athlete-info strong {
-    font-size: 1.6rem;
-    color: #003366;
-    display: block;
-    margin-bottom: 8px;
-  }
+    <!-- MILLROSE GAMES MEN -->
+    <div class="results-event">
+      <div class="results-header" onclick="toggleResults(this)">
+        Millrose Games – Men’s Mile Race Walk
+        <span class="results-arrow">▼</span>
+      </div>
+      <div class="results-content">
+        <p><strong>1.</strong> Ever Palma – 5:24.50 (WR)</p>
+        <p><strong>2.</strong> Perseus Karlström – 5:32.34</p>
+        <p><strong>3.</strong> Chris Linke – 5:35.83</p>
+        <p><strong>7.</strong> Jordan Crawford – 6:15.13</p>
+        <p><strong>8.</strong> Jason Cherng – 6:15.34</p>
+        <p><strong>9.</strong> Gael Plascenia – 6:29.81</p>
+      </div>
+    </div>
 
-  .athlete-bio {
-    display: none;
-    font-size: 1rem;
-    font-weight: 200;
-    color: #000;
-  }
-</style>
+    <!-- USATF INDOOR WOMEN -->
+    <div class="results-event">
+      <div class="results-header" onclick="toggleResults(this)">
+        USATF Indoor Nationals – Women’s 3000m
+        <span class="results-arrow">▼</span>
+      </div>
+      <div class="results-content">
+        <p><strong>1.</strong> Lauren Harris – 13:23.83</p>
+        <p><strong>2.</strong> Maria Michta-Coffey – 13:33.28</p>
+        <p><strong>3.</strong> Miranda Melville – 13:36.67</p>
+        <p><strong>8.</strong> Stephanie Casey – 14:38.25</p>
+        <p><strong>10.</strong> Angelica Harris – 14:49.51</p>
+      </div>
+    </div>
 
-<!-- Add this JS before </body> -->
+    <!-- NIKE OUTDOOR / U20 -->
+    <div class="results-event">
+      <div class="results-header" onclick="toggleResults(this)">
+        Nike Outdoor Nationals / USATF U20 – 10,000m
+        <span class="results-arrow">▼</span>
+      </div>
+      <div class="results-content">
+        <p><strong>Men</strong></p>
+        <p><strong>1.</strong> Jonny Jurchen – 48:43.04</p>
+        <p><strong>2.</strong> Rowan McDonald – 49:59.42</p>
+        <p><strong>3.</strong> David Dorantes – 50:14.78</p>
+        <p><strong>4.</strong> Matthew Wombacker – 54:41.65</p>
+        <p><strong>5.</strong> Ansh Patel – 56:53.82</p>
+
+        <p><strong>Women</strong></p>
+        <p><strong>1.</strong> Talia Green – 52:25.62</p>
+        <p><strong>2.</strong> Kayleia Lindsey – 57:07.92</p>
+        <p><strong>3.</strong> Natalie Grant – 58:04.65</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="tab-content">
+  <h2>About</h2>
+  <p>USA RACEWALK is your go-to source for U.S. racewalking.</p>
+</section>
+
+<footer>© 2026 USA RACEWALK</footer>
+
 <script>
-  function toggleBio(card) {
-    const bio = card.querySelector('.athlete-bio');
-    if (bio.style.display === 'block') {
-      bio.style.display = 'none';
-    } else {
-      bio.style.display = 'block';
-      card.scrollIntoView({behavior: "smooth", block: "start"});
-    }
+  function showSection(sectionId) {
+    document.querySelectorAll('.tab-content').forEach(sec => sec.style.display = 'none');
+    document.getElementById(sectionId).style.display = 'block';
+    window.scrollTo(0,0);
+  }
+
+  function showResults(yearId, btn) {
+    document.querySelectorAll('[id^="year"]').forEach(y => y.style.display = 'none');
+    document.querySelectorAll('.results-tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById(yearId).style.display = 'block';
+    btn.classList.add('active');
+  }
+
+  function toggleResults(header) {
+    const event = header.parentElement;
+    event.classList.toggle('open');
   }
 </script>
-
-  </section>
-
-  <!-- RESULTS SECTION -->
-  <section id="results" class="tab-content">
-    <h2>Results</h2>
-    <p><strong>USA 20km Championships</strong><br>Top results from the latest race.</p>
-    <p><strong>Another Event</strong><br>Summary of placements and times.</p>
-  </section>
-
-  <!-- ABOUT SECTION -->
-  <section id="about" class="tab-content">
-    <h2>About</h2>
-    <p>USA RACEWALK is your go-to source for news, athletes, and results in United States racewalking.</p>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    © 2026 USA RACEWALK
-  </footer>
-
-  <!-- JAVASCRIPT -->
-  <script>
-    function showSection(sectionId) {
-      const sections = document.querySelectorAll('.tab-content');
-      sections.forEach(sec => sec.style.display = 'none');
-      document.getElementById(sectionId).style.display = 'block';
-      window.scrollTo(0,0);
-    }
-  </script>
 
 </body>
 </html>
