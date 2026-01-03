@@ -51,32 +51,74 @@
       line-height: 1.7;
     }
 
-    /* NAVIGATION BAR */
-    nav {
-      position: sticky;
-      top: 0;
-      background: var(--nav);
-      padding: 16px;
-      text-align: center;
-      z-index: 100;
-      display: flex;
-      gap: 16px;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
+    /* ===== NAVBAR ===== */
+.navbar {
+  background: #222;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  position: relative;
+}
 
-    nav a {
-      margin: 0 8px;
-      color: #ffffff;
-      font-weight: bold;
-      text-decoration: none;
-      font-size: 0.95rem;
-      transition: color 0.3s ease;
-      cursor: pointer;
-    }
+.nav-logo {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
 
-    nav a:hover { color: var(--accent); }
+.nav-toggle {
+  margin-left: auto;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none; /* only show on small screens */
+}
+
+/* Dropdown menu */
+.nav-dropdown {
+  display: flex;
+  flex-direction: column;
+  background: #333;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  display: none; /* hide by default */
+}
+
+.nav-dropdown.open {
+  display: flex;
+}
+
+.nav-dropdown a {
+  padding: 12px 16px;
+  color: white;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.nav-dropdown a:hover {
+  background: #555;
+}
+
+/* ===== SEARCH BAR ===== */
+.nav-search {
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.nav-search input {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: none;
+  font-size: 0.95rem;
+}
+
+/* Mobile toggle */
+@media (max-width: 768px) {
+  .nav-toggle { display: block; }
+}
+
 
     /* SEARCH BAR */
     #site-search {
@@ -369,15 +411,30 @@
 
 <body>
 
-<nav aria-label="Primary">
-  <a onclick="showSection('featured')" aria-label="Featured">Featured</a>
-  <a onclick="showSection('news')" aria-label="News">News</a>
-  <a onclick="showSection('athletes')" aria-label="Athletes">Athletes</a>
-  <a onclick="showSection('results')" aria-label="Results">Results</a>
-  <a onclick="showSection('upcoming')" aria-label="Upcoming Races">Upcoming Races</a>
-  <a onclick="showSection('submissions')" aria-label="Submissions">Submissions</a>
-  <a onclick="showSection('about')" aria-label="About">About</a>
-  <input id="site-search" type="search" placeholder="Search articles, athletes, results…" aria-label="Site search">
+<nav class="navbar">
+  <div class="nav-logo">🏃‍♀️ Racewalk</div>
+  <div class="nav-toggle" onclick="toggleMenu()">☰</div>
+
+  <div class="nav-dropdown" id="navDropdown">
+    <!-- Search bar -->
+    <div class="nav-search">
+      <input
+        type="search"
+        id="dropdownSearch"
+        placeholder="Search athletes, results…"
+        onkeyup="filterSite()"
+      >
+    </div>
+
+    <!-- Dropdown links -->
+    <a onclick="showSection('featured'); toggleMenu()">Featured</a>
+    <a onclick="showSection('news'); toggleMenu()">News</a>
+    <a onclick="showSection('athletes'); toggleMenu()">Athletes</a>
+    <a onclick="showSection('results'); toggleMenu()">Results</a>
+    <a onclick="showSection('upcoming'); toggleMenu()">Upcoming</a>
+    <a onclick="showSection('submissions'); toggleMenu()">Submissions</a>
+    <a onclick="showSection('about'); toggleMenu()">About</a>
+  </div>
 </nav>
 
 <header>
@@ -437,7 +494,7 @@
     </div>
   </a>
   <a href="nick.html" class="athlete-card searchable">
-    <img src="nick1.jpeg" alt="Nick Christie">
+    <img src="nick.jpeg" alt="Nick Christie">
     <div class="athlete-info"><strong>Nick Christie</strong>
       <p class="athlete-bio">2020 Olympian</p>
     </div>
@@ -646,7 +703,11 @@
 <section id="submissions" class="tab-content">
   <h2>Submissions</h2>
   <p>Meet directors and athletes: submit meet info, results, or story ideas. We’ll review and publish or follow up.</p>
-  <form class="submissions-form" id="submissionsForm" action="https://formspree.io/f/your-id" method="POST">
+  <form
+  class="submissions-form"
+  action="https://formspree.io/f/mqeabvqo"
+  method="POST"
+>
     <label for="subType">Submission Type</label>
     <select name="type" id="subType" required>
       <option value="">Choose one</option>
@@ -917,6 +978,32 @@
     renderUpcoming();
     renderNewsUpcoming();
   });
+</script>
+<script>
+function toggleMenu() {
+  const menu = document.getElementById('navDropdown');
+  const search = document.getElementById('dropdownSearch');
+  menu.classList.toggle('open');
+  
+  // clear search when closing
+  if (!menu.classList.contains('open')) {
+    search.value = '';
+    filterSite();
+  }
+}
+
+function filterSite() {
+  const query = document.getElementById('dropdownSearch').value.toLowerCase();
+  const items = document.querySelectorAll('.searchable');
+  
+  items.forEach(item => {
+    const text = item.innerText.toLowerCase();
+    item.style.display = text.includes(query) ? '' : 'none';
+  });
+
+  // optional: switch to athletes tab when searching
+  showSection('athletes');
+}
 </script>
 
 </body>
