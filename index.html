@@ -410,32 +410,23 @@
 </head>
 
 <body>
-
 <nav class="navbar">
-  <div class="nav-logo">🏃‍♀️ Racewalk</div>
+  <div class="nav-logo">Racewalk</div>
   <div class="nav-toggle" onclick="toggleMenu()">☰</div>
 
-  <div class="nav-dropdown" id="navDropdown">
-    <!-- Search bar -->
-    <div class="nav-search">
-      <input
-        type="search"
-        id="dropdownSearch"
-        placeholder="Search athletes, results…"
-        onkeyup="filterSite()"
-      >
-    </div>
-
-    <!-- Dropdown links -->
-    <a onclick="showSection('featured'); toggleMenu()">Featured</a>
-    <a onclick="showSection('news'); toggleMenu()">News</a>
-    <a onclick="showSection('athletes'); toggleMenu()">Athletes</a>
-    <a onclick="showSection('results'); toggleMenu()">Results</a>
-    <a onclick="showSection('upcoming'); toggleMenu()">Upcoming</a>
-    <a onclick="showSection('submissions'); toggleMenu()">Submissions</a>
-    <a onclick="showSection('about'); toggleMenu()">About</a>
-  </div>
+  <ul class="nav-dropdown" id="navDropdown">
+    <li class="nav-search">
+      <input type="search" id="dropdownSearch" placeholder="Search athletes..." onkeyup="filterSite()">
+    </li>
+    <li><a href="#featured">Featured</a></li>
+    <li><a href="#news">News</a></li>
+    <li><a href="#athletes">Athletes</a></li>
+    <li><a href="#results">Results</a></li>
+    <li><a href="#upcoming">Upcoming</a></li>
+ <li><a href="#submissions">Submissions</a></li>
+  </ul>
 </nav>
+
 
 <header>
   <h1>USA RACEWALK</h1>
