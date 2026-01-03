@@ -51,59 +51,64 @@
       line-height: 1.7;
     }
 
-    /* ===== NAVBAR (simple horizontal) ===== */
-    .navbar {
-      background: #222;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      padding: 10px 16px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    .nav-logo {
-      font-size: 1.2rem;
-      font-weight: bold;
-      white-space: nowrap;
-    }
-    .nav-links {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-    .nav-links a {
-      color: #fff;
-      text-decoration: none;
-      padding: 8px 10px;
-      border-radius: 6px;
-      display: inline-block;
-      transition: background 0.2s ease;
-    }
-    .nav-links a:hover,
-    .nav-links a:focus {
-      background: #444;
-    }
+  /* ===== NAVBAR (simple horizontal) ===== */
+.navbar {
+  background: #001a33; /* dark navy blue */
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 16px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
 
-    /* Search in navbar */
-    .nav-spacer {
-      flex: 1;
-    }
-    #site-search {
-      flex: 0 1 340px;
-      max-width: 420px;
-      min-width: 200px;
-      padding: 10px 12px;
-      border-radius: 8px;
-      border: 1px solid rgba(255,255,255,0.6);
-      outline: none;
-      background: #fff;
-      color: #000;
-    }
+.nav-logo {
+  font-size: 1.2rem;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.nav-links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 10px;
+  border-radius: 6px;
+  display: inline-block;
+  transition: color 0.2s ease;
+}
+
+/* Hover/focus: turn text red (no background swap) */
+.nav-links a:hover,
+.nav-links a:focus {
+  color: var(--accent); /* #ff0000 */
+  background: transparent;
+}
+
+/* Search in navbar */
+.nav-spacer { flex: 1; }
+
+#site-search {
+  flex: 0 1 340px;
+  max-width: 420px;
+  min-width: 200px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.6);
+  outline: none;
+  background: #fff;
+  color: #000;
+}
 
     /* HEADER */
     header {
@@ -343,7 +348,7 @@
 <body>
   <!-- Simple horizontal navigation -->
   <nav class="navbar" aria-label="Primary">
-    <div class="nav-logo">Racewalk</div>
+    <div class="nav-logo">USA Racewalk</div>
     <ul class="nav-links">
       <li><a href="#featured" onclick="showSection('featured')">Featured</a></li>
       <li><a href="#news" onclick="showSection('news')">News</a></li>
@@ -410,7 +415,7 @@
       </div>
     </a>
     <a href="nick.html" class="athlete-card searchable">
-      <img src="nick.jpeg" alt="Nick Christie">
+      <img src="nick1.jpeg" alt="Nick Christie">
       <div class="athlete-info"><strong>Nick Christie</strong>
         <p class="athlete-bio">2020 Olympian</p>
       </div>
