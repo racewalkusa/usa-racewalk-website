@@ -6,30 +6,33 @@
 
   <title>The State of Racewalking in the U.S. — and Why Change Is Good</title>
 
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Roboto+Condensed:wght@200;700&display=swap" rel="stylesheet">
 
+  <!-- Canonical -->
   <link rel="canonical" href="https://usaracewalk.com/opinion-state-of-racewalking.html">
 
-  <!-- Open Graph / Twitter -->
+  <!-- Open Graph -->
   <meta property="og:title" content="The State of Racewalking in the U.S. — and Why Change Is Good">
   <meta property="og:description" content="Why racewalking is missing from track & field headlines—and how modern storytelling can help the sport grow.">
-  <meta property="og:image" content="handoff.jpg">
+  <meta property="og:image" content="https://usaracewalk.com/images/handoff.jpg">
   <meta property="og:url" content="https://usaracewalk.com/opinion-state-of-racewalking.html">
   <meta property="og:type" content="article">
 
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="The State of Racewalking in the U.S. — and Why Change Is Good">
   <meta name="twitter:description" content="Racewalking doesn’t lack talent—it lacks visibility. Change is good.">
-  <meta name="twitter:image" content="https://usaracewalk.com/images/feature-marathon-favorites.jpg">
+  <meta name="twitter:image" content="https://usaracewalk.com/images/handoff.jpg">
 
-  <!-- JSON-LD Opinion Article -->
+  <!-- JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "OpinionArticle",
     "headline": "The State of Racewalking in the U.S. — and Why Change Is Good",
     "description": "An opinion on why racewalking remains absent from mainstream track and field coverage, and why embracing modern storytelling is essential for growth.",
-    "image": "handoff.jpg",
+    "image": "https://usaracewalk.com/images/handoff.jpg",
     "datePublished": "2026-01-02",
     "dateModified": "2026-01-02",
     "author": {
@@ -54,7 +57,7 @@
       --accent:#ff0000;
       --bg:#e6f0ff;
       --text:#0b1320;
-      --card:#fff;
+      --card:#ffffff;
       --muted:#5b6780;
     }
 
@@ -69,7 +72,7 @@
       line-height: 1.75;
     }
 
-    /* Top bar */
+    /* Top Navigation */
     .topbar {
       position: sticky;
       top: 0;
@@ -80,82 +83,70 @@
       align-items: center;
       gap: 16px;
       padding: 12px 16px;
-      flex-wrap: wrap;
     }
 
-    .topbar a.brand {
-      font-family: 'Fjalla One', sans-serif;
-      color: #fff;
-      text-decoration: none;
-      font-size: 1.4rem;
-      letter-spacing: 0.5px;
-    }
-
-    .topbar .spacer { flex: 1; }
-
-    .topbar a.navlink {
+    .topbar a {
       color: #fff;
       text-decoration: none;
       font-weight: 700;
     }
 
-    .topbar a.navlink:hover { color: var(--accent); }
+    .topbar a.brand {
+      font-family: 'Fjalla One', sans-serif;
+      font-size: 1.4rem;
+      letter-spacing: 0.5px;
+    }
 
-    /* Hero */
-    header.hero {
+    .topbar a:hover { color: var(--accent); }
+    .spacer { flex: 1; }
+
+    /* Story Hero */
+    .story-hero {
       max-width: 1100px;
-      margin: 18px auto;
-      padding: 0 16px;
-    }
-
-    .hero-card {
-      background: var(--card);
-      border-radius: 14px;
+      margin: 20px auto;
+      border-radius: 18px;
       overflow: hidden;
-      box-shadow: 0 10px 28px rgba(0,0,0,0.12);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.14);
     }
 
-    .hero-media {
+    .story-hero img {
       width: 100%;
-      height: 360px;
+      height: 440px;
       object-fit: cover;
       display: block;
     }
 
-    .hero-body {
-      padding: 22px;
+    /* Title Block */
+    .story-header {
+      max-width: 900px;
+      margin: 0 auto 24px;
+      padding: 0 16px;
     }
 
-    .hero-title {
+    .story-header h1 {
       font-family: 'Fjalla One', sans-serif;
-      font-size: 2.5rem;
-      margin: 0 0 8px;
+      font-size: 2.6rem;
       color: var(--nav);
+      margin-bottom: 6px;
     }
 
-    .hero-sub {
-      color: var(--muted);
-      margin: 0;
-      font-size: 1.05rem;
-    }
-
-    /* Layout */
+    /* Main Content */
     main {
       max-width: 900px;
-      margin: 0 auto;
-      padding: 0 16px 40px;
+      margin: 0 auto 40px;
+      padding: 0 16px;
     }
 
     article {
       background: var(--card);
-      border-radius: 12px;
-      padding: 26px 28px;
+      border-radius: 14px;
+      padding: 28px 30px;
       box-shadow: 0 6px 18px rgba(0,0,0,0.08);
     }
 
     article h2 {
       color: var(--nav);
-      margin-top: 26px;
+      margin-top: 28px;
       font-weight: 700;
     }
 
@@ -169,7 +160,7 @@
       padding-left: 14px;
       color: var(--nav);
       font-weight: 700;
-      margin: 20px 0;
+      margin: 22px 0;
     }
 
     footer {
@@ -181,32 +172,31 @@
 </head>
 
 <body>
-  <article class="story">
-  <img
-    src="images/handoff.jpg"
-    alt="U.S. racewalkers competing at a national championship"
-    class="story-cover"
-  >
 
-  <h1>The State of Racewalking in the U.S. and Why Change Is Good</h1>
-  </p>
-
-</article>
-
-
-  <div class="topbar" role="navigation" aria-label="Top navigation">
+  <!-- NAV -->
+  <div class="topbar">
     <a class="brand" href="index.html">USA RACEWALK</a>
-    <a class="navlink" href="index.html">Home</a>
-    <a class="navlink" href="index.html#upcoming">Upcoming</a>
-    <a class="navlink" href="index.html#results">Results</a>
-    <a class="navlink" href="index.html#athletes">Athletes</a>
+    <a href="index.html">Home</a>
+    <a href="index.html#upcoming">Upcoming</a>
+    <a href="index.html#results">Results</a>
+    <a href="index.html#athletes">Athletes</a>
     <div class="spacer"></div>
   </div>
 
+  <!-- HERO IMAGE -->
+  <header class="story-hero">
+    <img src="images/handoff.jpg" alt="U.S. racewalkers competing at a national championship">
+  </header>
 
+  <!-- TITLE -->
+  <div class="story-header">
+    <h1>The State of Racewalking in the U.S. and Why Change Is Good</h1>
+  </div>
+
+  <!-- ARTICLE -->
   <main>
+    <article>
 
-<article class="story">
       <p class="pull">
         Racewalking doesn’t lack talent, it lacks visibility.
       </p>
@@ -233,7 +223,7 @@
       </p>
 
       <p>
-        The truth is, we haven’t built a culture that invites people in.
+        The truth is, we haven’t built a culture that invites people in. This isn't because of an unwelcoming environment, it's because of presentation.
       </p>
 
       <h2>The Visibility Gap</h2>
@@ -261,7 +251,7 @@
       <p>
         This isn’t a lack of talent issue. Athletes like Lauren Harris, Jordan Crawford, Jason Cherng, Bricyn Healey,
         Angelina Colon, Angelica Harris, Cole Bennett, and competitors across the NAIA represent the next generation of
-        American racewalking. Their stories deserve to be told.
+        American racewalking. They all have unique aspects to them as athletes, and if represented correctly, more athletes will want to be a part of the community.
       </p>
 
       <p>
@@ -288,3 +278,4 @@
 
 </body>
 </html>
+
