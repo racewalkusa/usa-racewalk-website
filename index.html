@@ -23,39 +23,19 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "USATF Marathon Racewalk Favorites",
-  "description": "A deep dive into the leading contenders, training blocks, and race strategies for the USATF Marathon Racewalk.",
-  "image": ["https://usaracewalk.com/images/feature-marathon-favorites.jpg"],
-  "datePublished": "2026-01-02",
-  "dateModified": "2026-01-02",
-  "author": { "@type": "Person", "name": "USA RACEWALK Editorial" },
+  "@type": "WebSite",
+  "name": "USA RACEWALK",
+  "url": "https://usaracewalk.com/",
   "publisher": {
     "@type": "Organization",
     "name": "USA RACEWALK",
-    "logo": { "@type": "ImageObject", "url": "https://usaracewalk.com/images/logo.png" }
-  },
-  "mainEntityOfPage": "https://usaracewalk.com/marathonfaves.html"
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://usaracewalk.com/images/logo.png"
+    }
+  }
 }
 </script>
- 
-  <!-- FEATURED OPINION -->
-<a href="op-ed...what%20the%20racewalk%20needs.html" class="feature-card opinion">
-
-  <img src="images/handoff.jpg"
-       alt="U.S. racewalkers competing at a national championship">
-
-  <div class="feature-content">
-    <span class="feature-tag">Opinion</span>
-    <h3>The State of Racewalking in the U.S. — and Why Change Is Good</h3>
-    <p>
-      Racewalking doesn’t lack talent—it lacks visibility.
-      A candid look at why the sport is missing from headlines and how change can help it grow.
-    </p>
-  </div>
-
-</a>
-
 
   <style>
     /* GENERAL STYLES */
@@ -339,6 +319,21 @@
       color: var(--accent);
       text-decoration: none;
     }
+    .hero.opinion {
+  border-left: 6px solid var(--accent);
+}
+
+.hero.opinion .feature-tag {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
 
    /* UPCOMING RACES (dynamic by year & month) */
     .calendar-controls { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
@@ -406,19 +401,55 @@
 <!-- FEATURED HERO (single, full-width) -->
 <section id="featured" class="tab-content">
   <h2>Featured</h2>
-  <div class="hero searchable" data-url="marathonfaves.html" role="link" tabindex="0">
-    <img src="feature-marathon-favorites.jpg" alt="USATF Marathon Racewalk Favorites" loading="lazy">
+
+  <!-- FEATURED OPINION -->
+  <a href="op-ed...what%20the%20racewalk%20needs.html"
+     class="hero opinion searchable"
+     role="link">
+
+    <img src="images/handoff.jpg"
+         alt="U.S. racewalkers competing at a national championship"
+         loading="lazy">
+
+    <div class="hero-content">
+      <span class="feature-tag">Opinion</span>
+      <h3>The State of Racewalking in the U.S. — and Why Change Is Good</h3>
+      <p>
+        Racewalking doesn’t lack talent—it lacks visibility.
+        A candid look at why the sport is missing from headlines and how change can help it grow.
+      </p>
+      <span class="readmore">Read more →</span>
+    </div>
+  </a>
+
+  <!-- FEATURED HERO: MARATHON -->
+  <div class="hero searchable"
+       data-url="marathonfaves.html"
+       role="link"
+       tabindex="0">
+
+    <img src="feature-marathon-favorites.jpg"
+         alt="USATF Marathon Racewalk Favorites"
+         loading="lazy">
+
     <div class="hero-content">
       <h3>USATF Marathon Racewalk Favorites</h3>
-      <p>A deep dive into the leading contenders, their training blocks, race strategies, and what splits could look like over 42.2km. We break down strengths, recent form, and how course specifics may shape the outcome.</p>
+      <p>
+        A deep dive into the leading contenders, their training blocks, race strategies,
+        and what splits could look like over 42.2km.
+      </p>
       <span class="readmore">Read more →</span>
-      <div class="share" data-share-url="https://usaracewalk.com/marathonfaves.html" data-share-text="USATF Marathon Racewalk Favorites">
+
+      <div class="share"
+           data-share-url="https://usaracewalk.com/marathonfaves.html"
+           data-share-text="USATF Marathon Racewalk Favorites">
         <a href="#" class="share-x">Share on X</a>
         <a href="#" class="share-fb">Share on Facebook</a>
       </div>
     </div>
   </div>
 </section>
+
 
 <!-- NEWS -->
 <section id="news" class="tab-content">
