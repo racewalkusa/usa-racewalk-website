@@ -399,57 +399,228 @@
 </header>
 
 <!-- FEATURED HERO (single, full-width) -->
-<section id="featured" class="tab-content">
-  <h2>Featured</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>USA RACEWALK</title>
 
-  <!-- FEATURED OPINION -->
-  <a href="op-ed...what%20the%20racewalk%20needs.html"
-     class="hero opinion searchable"
-     role="link">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Roboto+Condensed:wght@200;700&display=swap" rel="stylesheet">
 
-    <img src="images/handoff.jpg"
-         alt="U.S. racewalkers competing at a national championship"
-         loading="lazy">
+  <!-- SEO -->
+  <link rel="canonical" href="https://usaracewalk.com/">
+  <meta name="description" content="USA Racewalk covers U.S. racewalking news, results, athletes, and opinion.">
 
-    <div class="hero-content">
-      <span class="feature-tag">Opinion</span>
-      <h3>The State of Racewalking in the U.S. — and Why Change Is Good</h3>
-      <p>
-        Racewalking doesn’t lack talent—it lacks visibility.
-        A candid look at why the sport is missing from headlines and how change can help it grow.
-      </p>
-      <span class="readmore">Read more →</span>
-    </div>
-  </a>
+  <!-- Social -->
+  <meta property="og:title" content="USA RACEWALK">
+  <meta property="og:description" content="Racewalking news, athletes, results, and opinion.">
+  <meta property="og:image" content="https://usaracewalk.com/images/logo.png">
+  <meta property="og:type" content="website">
 
-  <!-- FEATURED HERO: MARATHON -->
-  <div class="hero searchable"
-       data-url="marathonfaves.html"
-       role="link"
-       tabindex="0">
+  <!-- JSON-LD: Website -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "USA RACEWALK",
+    "url": "https://usaracewalk.com/",
+    "publisher": {
+      "@type": "Organization",
+      "name": "USA RACEWALK",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://usaracewalk.com/images/logo.png"
+      }
+    }
+  }
+  </script>
 
-    <img src="feature-marathon-favorites.jpg"
-         alt="USATF Marathon Racewalk Favorites"
-         loading="lazy">
+  <style>
+    :root {
+      --nav:#003366;
+      --accent:#c30000;
+      --bg:#e6f0ff;
+      --text:#0b1320;
+      --card:#fff;
+      --muted:#5b6780;
+    }
 
-    <div class="hero-content">
-      <h3>USATF Marathon Racewalk Favorites</h3>
-      <p>
-        A deep dive into the leading contenders, their training blocks, race strategies,
-        and what splits could look like over 42.2km.
-      </p>
-      <span class="readmore">Read more →</span>
+    * { box-sizing: border-box; }
 
-      <div class="share"
-           data-share-url="https://usaracewalk.com/marathonfaves.html"
-           data-share-text="USATF Marathon Racewalk Favorites">
-        <a href="#" class="share-x">Share on X</a>
-        <a href="#" class="share-fb">Share on Facebook</a>
-      </div>
-    </div>
+    body {
+      margin: 0;
+      font-family: 'Roboto Condensed', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    /* Top bar */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--nav);
+      color: #fff;
+      display: flex;
+      gap: 16px;
+      padding: 12px 16px;
+      align-items: center;
+    }
+
+    .topbar a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .topbar a.brand {
+      font-family: 'Fjalla One', sans-serif;
+      font-size: 1.4rem;
+    }
+
+    .spacer { flex: 1; }
+
+    /* Layout */
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px 16px 48px;
+    }
+
+    h2 {
+      font-family: 'Fjalla One', sans-serif;
+      color: var(--nav);
+      margin-bottom: 12px;
+    }
+
+    /* Hero cards */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr;
+      background: var(--card);
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 18px;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.12);
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .hero img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .hero-content {
+      padding: 18px 20px;
+    }
+
+    .hero-content h3 {
+      font-family: 'Fjalla One', sans-serif;
+      font-size: 1.6rem;
+      margin: 6px 0 6px;
+      color: var(--nav);
+    }
+
+    .hero-content p {
+      margin: 0 0 10px;
+      color: var(--muted);
+    }
+
+    .readmore {
+      font-weight: 700;
+      color: var(--nav);
+    }
+
+    /* Opinion styling */
+    .hero.opinion {
+      border-left: 6px solid var(--accent);
+    }
+
+    .feature-tag {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 8px;
+      border-radius: 6px;
+      margin-bottom: 6px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 24px 16px;
+      color: #556072;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <div class="topbar">
+    <a href="index.html" class="brand">USA RACEWALK</a>
+    <a href="#featured">Featured</a>
+    <a href="#results">Results</a>
+    <a href="#athletes">Athletes</a>
+    <div class="spacer"></div>
   </div>
-</section>
 
+  <main>
+
+    <!-- FEATURED -->
+    <section id="featured">
+      <h2>Featured</h2>
+
+      <!-- OP-ED -->
+      <a href="op-ed...what%20the%20racewalk%20needs.html"
+         class="hero opinion">
+
+        <img src="images/handoff.jpg"
+             alt="U.S. racewalkers competing at a national championship">
+
+        <div class="hero-content">
+          <span class="feature-tag">Opinion</span>
+          <h3>The State of Racewalking in the U.S. — and Why Change Is Good</h3>
+          <p>
+            Racewalking doesn’t lack talent — it lacks visibility.
+            A candid look at why the sport is missing from headlines and how change can help it grow.
+          </p>
+          <span class="readmore">Read more →</span>
+        </div>
+      </a>
+
+      <!-- MARATHON FEATURE -->
+      <a href="marathonfaves.html"
+         class="hero">
+
+        <img src="images/feature-marathon-favorites.jpg"
+             alt="USATF Marathon Racewalk Favorites">
+
+        <div class="hero-content">
+          <h3>USATF Marathon Racewalk Favorites</h3>
+          <p>
+            A deep dive into contenders, clubs, training blocks,
+            and how the first U.S. race walk marathon could unfold.
+          </p>
+          <span class="readmore">Read more →</span>
+        </div>
+      </a>
+    </section>
+
+  </main>
+
+  <footer>
+    © 2026 USA RACEWALK — All rights reserved.
+  </footer>
+
+</body>
+</html>
 
 <!-- NEWS -->
 <section id="news" class="tab-content">
